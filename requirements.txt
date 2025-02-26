@@ -1,0 +1,8 @@
+langchain-core
+langchain-openai
+langchain-community
+langchain-ollama
+streamlit
+dotenv
+huggingface_hub 
+transformers
