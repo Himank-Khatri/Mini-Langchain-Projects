@@ -2,7 +2,11 @@ langchain-core
 langchain-openai
 langchain-community
 langchain-ollama
+langserve
 streamlit
 dotenv
 huggingface_hub 
 transformers
+fastapi
+uvicorn 
+sse_starlette

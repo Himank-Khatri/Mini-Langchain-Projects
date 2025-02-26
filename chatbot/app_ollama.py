@@ -6,10 +6,8 @@ from langchain_ollama import OllamaLLM
 import os
 import streamlit as st
 from dotenv import load_dotenv
-
 load_dotenv()
 
-os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
 os.environ["LANGCHAIN_TRACING_V2"] = "true"
 os.environ["LANGCHAIN_API_KEY"] = os.getenv("LANGCHAIN_API_KEY")
 
@@ -24,7 +22,7 @@ output_parser = StrOutputParser()
 
 chain = prompt | llm | output_parser
 
-st.title("Langchain Demo with OPEN API")
+st.title("Langchain Demo with Ollama")
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
