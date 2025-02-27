@@ -7,7 +7,6 @@ import uvicorn
 from dotenv import load_dotenv
 load_dotenv()
 
-os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
 os.environ["LANGCHAIN_TRACING_V2"] = "true"
 os.environ["LANGCHAIN_API_KEY"] = os.getenv("LANGCHAIN_API_KEY")
 
@@ -17,20 +16,21 @@ app = FastAPI(
     description="A simple API server"
 )
 
-llm = OllamaLLM(model='qwen2:0.5b')
+qwen = OllamaLLM(model='qwen2:0.5b')
+llama = OllamaLLM(model='llama3.2:1b')
 
 prompt1 = ChatPromptTemplate.from_template("Write me an essay about {topic} with 100 words")
 prompt2 = ChatPromptTemplate.from_template("Write me an poem about {topic} with 100 words")
 
 add_routes(
     app,
-    prompt1 | llm,
+    prompt1 | llama,
     path="/essay"
 )
 
 add_routes(
     app,
-    prompt2 | llm,
+    prompt2 | qwen,
     path="/poem"
 )
 
