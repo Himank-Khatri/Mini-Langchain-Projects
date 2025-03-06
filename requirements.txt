@@ -16,3 +16,4 @@ chromadb
 faiss-cpu
 arxiv
 wikipedia
+sentence-transformers
