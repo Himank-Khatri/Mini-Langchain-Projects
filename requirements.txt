@@ -2,6 +2,7 @@ langchain-core
 langchain-openai
 langchain-community
 langchain-ollama
+langchain-groq
 langserve
 streamlit
 dotenv
@@ -17,3 +18,4 @@ faiss-cpu
 arxiv
 wikipedia
 sentence-transformers
+groq
